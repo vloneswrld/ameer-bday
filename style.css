@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #023E8A;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  color: #ff85a2;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: #ff85a2;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: background 0.3s;
+  display: inline-block;
+  margin: 10px;
+}
+
+.btn:hover {
+  background-color: #ff5f87;
+}
+
+#love-letter {
+  padding: 60px 20px;
+  background-color: #292929;
+  text-align: center;
+}
+
+#love-letter h2 {
+  color: #ffa7c4;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.letter {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #eaeaea;
+}
+
+/* Confetti */
+#confetti span.confetti-emoji {
+  position: fixed;
+  font-size: 2rem;
+  animation: fall 6s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 40px auto;
+}
+
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00000044;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Reasons */
+.reasons {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 40px auto;
+  text-align: left;
+  font-size: 1.2em;
+}
+
+.reasons li {
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+}

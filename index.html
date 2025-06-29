@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Birthday Ameer!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Background music autoplay -->
+  <audio id="bg-music" autoplay loop muted>
+    <source src="music/floor-it.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Confetti emojis -->
+  <div id="confetti"></div>
+
+  <!-- Main content -->
+  <div class="container">
+    <h1>Happy Birthday, Ameer 🎂💖</h1>
+    <p class="message">
+      From the moment we first texted on May 6th... to all our calls, laughs, and Roblox games, you’ve made my world brighter.
+      I'm so thankful for you every single day, and I’m so happy we get to celebrate your existence today.
+    </p>
+
+    <a class="btn" href="#love-letter">Read Your Birthday Letter</a><br /><br />
+    <a class="btn" href="reasons.html">100 Reasons I Love You</a><br /><br />
+  </div>
+
+  <!-- Birthday Letter -->
+  <section id="love-letter">
+    <h2>Your Birthday Letter 💌</h2>
+    <p class="letter">
+      My baby Ameer,<br /><br />
+      I don’t even know where to start because there’s so much I want to say to you on your special day. First off, you are absolutely, undeniably gorgeous. Every little thing about you captivates me. Your smile lights up even my darkest days, your eyes hold so much warmth and kindness, and the way you carry yourself with confidence and humbleness? It’s honestly breathtaking. Sometimes I catch myself just looking back at your pictures because I can’t believe I get to call someone as incredible as you mine. But beyond your stunning looks, what truly makes me fall harder for you every single day is who you are inside. I am so unbelievably proud of you, Ameer. This past year alone, I’ve seen you grow in ways that amaze me. You’ve faced challenges head-on with a strength and resilience that I admire so much. You’ve pushed yourself to improve, mentally, emotionally, and in everything you do, and that shows how deeply committed you are to becoming your best self. You’ve accomplished so much, baby. Whether it’s the big wins or the small victories, each step you’ve taken is a testament to your dedication and heart. I know sometimes it’s not easy, and there have been moments that tested you, but you never gave up. That makes you one of the strongest people I know, not just physically but mentally and emotionally too. Your ability to stay grounded, to keep going even when things get rough, it inspires me every single day. You have this rare kind of strength that doesn’t shout but quietly moves mountains. And through it all, you remain so kind, so caring, so genuine. You’ve touched my life in ways I never expected, and you continue to be my safe place and my biggest motivation. I’m so grateful for every late night conversation, every laugh we share, every moment where we just get to be us. You make me feel loved and understood like no one else ever has. On this special day, I want you to know that I believe in you, in your dreams, your talents, and your incredible potential. You deserve all the happiness, success, and love the world has to offer. And I’ll be right here, cheering you on, holding your hand, and loving you fiercely every step of the way. Thank you for being you, for being so perfect in every way, for being my partner, my best friend, my everything. I hope this birthday is just the start of a year filled with unforgettable memories, new adventures, and all the joy your heart can hold. Happy Birthday, my gorgeous king. I love you more than words could ever express. Here’s to you today and always.<br /><br />
+      Forever yours, <br />
+      Tash 🖤
+    </p>
+  </section>
+
+  <!-- Confetti animation -->
+  <script>
+    const confetti = document.getElementById('confetti');
+    const emojis = ["🚗", "🏎️", "🚓"];
+
+    function createEmoji() {
+      const emoji = document.createElement("span");
+      emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = 2 + Math.random() * 3 + "s";
+      emoji.classList.add("confetti-emoji");
+      confetti.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 6000);
+    }
+
+    setInterval(createEmoji, 250);
+  </script>
+
+  <!-- Music autoplay/unmute fix -->
+  <script>
+    const audio = document.getElementById('bg-music');
+
+    audio.play().then(() => {
+      // Autoplay succeeded, unmute after short delay
+      setTimeout(() => {
+        audio.muted = false;
+      }, 500);
+    }).catch(() => {
+      // Autoplay failed, wait for user click
+      document.body.addEventListener('click', () => {
+        audio.muted = false;
+        audio.play();
+      }, { once: true });
+    });
+  </script>
+</body>
+</html>
